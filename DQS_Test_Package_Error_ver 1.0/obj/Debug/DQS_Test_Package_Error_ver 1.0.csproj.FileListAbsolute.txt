@@ -1,0 +1,10 @@
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\bin\Debug\DQS_Test_Package_Error_ver 1.0.exe.config
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\bin\Debug\DQS_Test_Package_Error_ver 1.0.exe
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\bin\Debug\DQS_Test_Package_Error_ver 1.0.pdb
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\obj\Debug\DQS_Test_Package_Error_ver 1.0.csproj.AssemblyReference.cache
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\obj\Debug\DQS_Test_Package_Error_ver_1._0.Form1.resources
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\obj\Debug\DQS_Test_Package_Error_ver_1._0.Properties.Resources.resources
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\obj\Debug\DQS_Test_Package_Error_ver 1.0.csproj.GenerateResource.cache
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\obj\Debug\DQS_Test_Package_Error_ver 1.0.csproj.CoreCompileInputs.cache
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\obj\Debug\DQS_Test_Package_Error_ver 1.0.exe
+E:\Test_Case\DQS_Test_Package_Error_ver 1.0\DQS_Test_Package_Error_ver 1.0\obj\Debug\DQS_Test_Package_Error_ver 1.0.pdb

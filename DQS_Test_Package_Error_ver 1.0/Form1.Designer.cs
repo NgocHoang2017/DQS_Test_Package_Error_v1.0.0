@@ -49,6 +49,7 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.home = new System.Windows.Forms.ToolStripMenuItem();
             this.thongtin = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,10 +76,10 @@ namespace DQS_Test_Package_Error_ver_1._0
             // 
             // bStart
             // 
-            this.bStart.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bStart.BackColor = System.Drawing.Color.Silver;
             this.bStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bStart.ForeColor = System.Drawing.Color.Teal;
-            this.bStart.Location = new System.Drawing.Point(219, 30);
+            this.bStart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bStart.Location = new System.Drawing.Point(260, 33);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(181, 43);
             this.bStart.TabIndex = 4;
@@ -99,9 +100,9 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.tbError);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 79);
+            this.groupBox1.Location = new System.Drawing.Point(11, 76);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 221);
+            this.groupBox1.Size = new System.Drawing.Size(576, 224);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hiển thị";
@@ -110,7 +111,7 @@ namespace DQS_Test_Package_Error_ver_1._0
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(226, 156);
+            this.label2.Location = new System.Drawing.Point(224, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 29);
             this.label2.TabIndex = 12;
@@ -120,7 +121,8 @@ namespace DQS_Test_Package_Error_ver_1._0
             // 
             this.lbCounter.AutoSize = true;
             this.lbCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCounter.Location = new System.Drawing.Point(369, 156);
+            this.lbCounter.ForeColor = System.Drawing.Color.Yellow;
+            this.lbCounter.Location = new System.Drawing.Point(367, 156);
             this.lbCounter.Name = "lbCounter";
             this.lbCounter.Size = new System.Drawing.Size(111, 29);
             this.lbCounter.TabIndex = 11;
@@ -131,7 +133,7 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.lbStatus.AutoSize = true;
             this.lbStatus.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatus.Location = new System.Drawing.Point(7, 198);
+            this.lbStatus.Location = new System.Drawing.Point(7, 194);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(31, 17);
             this.lbStatus.TabIndex = 10;
@@ -139,11 +141,16 @@ namespace DQS_Test_Package_Error_ver_1._0
             // 
             // tbStatus
             // 
+            this.tbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbStatus.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 38F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStatus.HideSelection = false;
             this.tbStatus.Location = new System.Drawing.Point(167, 88);
             this.tbStatus.Multiline = true;
             this.tbStatus.Name = "tbStatus";
+            this.tbStatus.ReadOnly = true;
             this.tbStatus.Size = new System.Drawing.Size(395, 65);
             this.tbStatus.TabIndex = 9;
             this.tbStatus.Text = "N/A";
@@ -152,10 +159,10 @@ namespace DQS_Test_Package_Error_ver_1._0
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(61, 113);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(55, 109);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 20);
+            this.label7.Size = new System.Drawing.Size(106, 24);
             this.label7.TabIndex = 8;
             this.label7.Text = "KẾT QUẢ ";
             // 
@@ -175,6 +182,7 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.tbLQI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLQI.Location = new System.Drawing.Point(462, 47);
             this.tbLQI.Name = "tbLQI";
+            this.tbLQI.ReadOnly = true;
             this.tbLQI.Size = new System.Drawing.Size(100, 26);
             this.tbLQI.TabIndex = 6;
             this.tbLQI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -185,26 +193,28 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 20);
+            this.label5.Size = new System.Drawing.Size(151, 20);
             this.label5.TabIndex = 5;
-            this.label5.Text = "% Đáp ứng  gói tin";
+            this.label5.Text = "% Đáp ứng gói tin";
             // 
             // tbError
             // 
             this.tbError.BackColor = System.Drawing.SystemColors.Menu;
+            this.tbError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbError.Location = new System.Drawing.Point(167, 47);
             this.tbError.Name = "tbError";
+            this.tbError.ReadOnly = true;
             this.tbError.Size = new System.Drawing.Size(97, 26);
             this.tbError.TabIndex = 4;
             this.tbError.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bRefresh
             // 
-            this.bRefresh.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bRefresh.BackColor = System.Drawing.Color.Silver;
             this.bRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRefresh.ForeColor = System.Drawing.Color.Teal;
-            this.bRefresh.Location = new System.Drawing.Point(427, 30);
+            this.bRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bRefresh.Location = new System.Drawing.Point(465, 33);
             this.bRefresh.Name = "bRefresh";
             this.bRefresh.Size = new System.Drawing.Size(122, 43);
             this.bRefresh.TabIndex = 6;
@@ -231,14 +241,15 @@ namespace DQS_Test_Package_Error_ver_1._0
             // home
             // 
             this.home.Name = "home";
-            this.home.Size = new System.Drawing.Size(52, 20);
-            this.home.Text = "Home";
+            this.home.Size = new System.Drawing.Size(71, 20);
+            this.home.Text = "Thông tin";
+            this.home.Click += new System.EventHandler(this.home_Click);
             // 
             // thongtin
             // 
             this.thongtin.Name = "thongtin";
-            this.thongtin.Size = new System.Drawing.Size(71, 20);
-            this.thongtin.Text = "Thông tin";
+            this.thongtin.Size = new System.Drawing.Size(63, 20);
+            this.thongtin.Text = "Trợ giúp";
             this.thongtin.Click += new System.EventHandler(this.Infor);
             // 
             // Form1
@@ -290,6 +301,7 @@ namespace DQS_Test_Package_Error_ver_1._0
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem thongtin;
         private System.Windows.Forms.ToolStripMenuItem home;
+        private System.Windows.Forms.HelpProvider helpProvider;
     }
 }
 

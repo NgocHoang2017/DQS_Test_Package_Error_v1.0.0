@@ -23,10 +23,10 @@ namespace DQS_Test_Package_Error_ver_1._0
         private delegate void SetTextDeleg(string text);
         System.Timers.Timer t;
         int s=60;
-        int h=0, m=2;
+        int h=0, m=0;
         int iLQI;
         float fError;
-
+      
         private string fileName = @"C:\\LOG\\Log " + DateTime.Now.ToString("yyyy_MM_dd") + ".txt";
         public Form1()
         {
@@ -36,7 +36,8 @@ namespace DQS_Test_Package_Error_ver_1._0
             vTimer();
             
         }
-
+      
+       
         // Function time counter up
         private void vTimer()
         {
@@ -55,19 +56,21 @@ namespace DQS_Test_Package_Error_ver_1._0
                 if (s == 0)
                 {
                     m -= 1;
-                    s = 0;
+                    
                     if (m == 1)
                     {
+
                         s = 60;
                         s -= 01;
-                        m -= 1;
-
+                        m = 1;
+                       
                     }
                     else if (m == 0)
                     {
                         s = 60;
                         s -= 01;
                         m = 0;
+                        
                     }
                     else if (s == 0)
                     {
@@ -76,7 +79,7 @@ namespace DQS_Test_Package_Error_ver_1._0
                         lbCounter.Text = "00:00:00";
                     }
                 }
-
+               
                 //s = 0;
                 lbCounter.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
                 if (s == 0)
@@ -92,6 +95,9 @@ namespace DQS_Test_Package_Error_ver_1._0
         private void vInit()
         {
             vCreateLog();
+
+           
+
         }
         private void vCreateLog()
         {
@@ -123,33 +129,27 @@ namespace DQS_Test_Package_Error_ver_1._0
         // Send data 
        
         private void vResetAllPort()
-        {
-
+        {        
             Int32 numOfDevices = 0;
-            //Int32 retVal = CP210x.CP210x.GetNumDevices(ref numOfDevices);
+            CP210x.CP210x.GetNumDevices(ref numOfDevices);
             IntPtr handle = IntPtr.Zero;
-            Byte[] prtNum = new Byte[1];
-            UInt16[] latch = new UInt16[8];
-            UInt16 mask = 0x01;
-            if (numOfDevices > 0)
-            {
-                CP210x.CP210x.Open(0, ref handle);
-                CP210x.CP210x.GetPartNumber(handle, prtNum);
-                
-                CP210x.CP210x.ReadLatch(handle, latch);
+            Thread.Sleep(200);
+            CP210x.CP210x.Reset(handle);
 
-                for (Int32 idx = 0; idx < 16; idx++)
-                {
-                        CP210x.CP210x.WriteLatch(handle, (UInt16)(mask << idx), 0x01);
-                }
-               
-            }
+            Byte[] prtNum = new Byte[1];
+          
+            CP210x.CP210x.Open(0, ref handle);
+            CP210x.CP210x.GetPartNumber(handle, prtNum);
+
+            
+            CP210x.CP210x.Close(handle);
+
         }
         private void bStart_Click(object sender, EventArgs e)
         {
-            //vResetAllPort();
-            //Thread.Sleep(100);
+            
             vStart();
+           
         }
         private void vStart()
         {
@@ -177,33 +177,35 @@ namespace DQS_Test_Package_Error_ver_1._0
                         
                         tbStatus.Text = "N/A";
                         tbStatus.BackColor = Color.White;
-                        //_serialPort.ReadTimeout = 500;
-                        Thread.Sleep(100);
-                        _serialPort.Close();
                        
-                        
+                        _serialPort.Close();
                         //s = 00;
+
                         vLog(strData);
                     }
                     else
                     {
 
+                        
+                        string strData = "";
                         vGetPortName();
                         lbStatus.Text = cbPortName.Text + " - ĐÃ KẾT NỐI";
                         _serialPort.PortName = cbPortName.Text;
                         _serialPort.BaudRate = 38400;
-                        string strData = DateTime.Now.ToString("HH:mm:ss.ff") + "->" + "Connect OK!-----------------------------------------*\n";
+                        strData = DateTime.Now.ToString("HH:mm:ss.ff") + "->" + "Connect OK!-----------------------------------------*\n";
                         bRefresh.Enabled = false;
                         bStart.Text = "DỪNG LẠI (Q)";
-                       
+                        s = 59;
                         t.Start(); // Start timer
-                      
+                       
                         _serialPort.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
                         _serialPort.Open();
+                        //_serialPort.Write(new byte[] { 0x58 }, 0, 1);
                         vLog(strData);
-
-
+                        
+                        
                     }
+                   
                 }
 
 
@@ -234,9 +236,9 @@ namespace DQS_Test_Package_Error_ver_1._0
                         string data = _serialPort.ReadExisting();
 
                         this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { data });
-                        Application.DoEvents();
-                        //Console.WriteLine(data);
-                        string strData = DateTime.Now.ToString("HH:mm:ss.ff") + data + "\n";
+                       
+                        Console.WriteLine(data);
+                        string strData = DateTime.Now.ToString("HH:mm:ss") + data + "\n";
                         vLog(strData);
                     }    
                    
@@ -254,73 +256,69 @@ namespace DQS_Test_Package_Error_ver_1._0
             
             string strReceiver = data.Trim();
             string[] arrList = strReceiver.Split('|');
+            tbError.Text = string.Empty;
+            tbLQI.Text = string.Empty;
+
+            tbLQI.Text = arrList[5].Substring(0, 5);
+            tbError.Text = arrList[2].Substring(0, 6);
+
+          
             
-            for(int i =0; i<= arrList.Length; i++)
-            {
-                //Console.WriteLine(arrList.Length);
-                tbError.Text = string.Empty;
-                tbLQI.Text = string.Empty;
-              
-                tbLQI.Text = arrList[5].Substring(0, 5);
-                tbError.Text = arrList[2].Substring(0,6);
                
-               
-                //t.Start();
-                
-                    if (m == 00 && s == 00)
+       
+                if (m == 00 && s == 00)
+                {
+
+                    if (Int32.TryParse(tbLQI.Text, out iLQI) && float.TryParse(tbError.Text, out fError))
                     {
-
-                        if (Int32.TryParse(tbLQI.Text, out iLQI) && float.TryParse(tbError.Text, out fError))
+                        if (iLQI > 70) // LQI > 70
                         {
-                            if (iLQI > 70) // LQI > 70
-                            {
-                                
-                                if (fError <= 1)
-                                {
-                                    tbStatus.Text = "ĐẠT";
-                                    tbStatus.BackColor = Color.Lime;
-                                    
-                                }
-                                else
-                                {
-                                    tbStatus.Text = "KHÔNG ĐẠT";
-                                    tbStatus.BackColor = Color.Red;
-                                }
-                               
 
+                            if (fError <= 1)
+                            {
+                                tbStatus.Text = "ĐẠT";
+                                tbStatus.BackColor = Color.Lime;
+
+                                _serialPort.Close();
+                                bStart.Enabled = false;
+                                bRefresh.Enabled = true;
                             }
                             else
                             {
-                           
                                 tbStatus.Text = "KHÔNG ĐẠT";
                                 tbStatus.BackColor = Color.Red;
+
                             }
+
+
                         }
                         else
                         {
-                            Console.WriteLine("Error");
-                        } 
-                        
-                        
-                        t.Stop();
+                                tbStatus.Text = "KHÔNG ĐẠT";
+                                tbStatus.BackColor = Color.Red;
+
+                        }
 
 
                     }
-              
-                     if(tbError.Text =="" || tbLQI.Text =="")
-                     {
-                        tbStatus.Text = "KHÔNG CÓ DỮ LIỆU";
-                        tbStatus.BackColor = Color.Red;
-                     }    
 
-            }
+                    t.Stop();
+                    
+                     
+
+                }
             
+           
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // not change size form
+            vResetAllPort();
         }
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -332,8 +330,11 @@ namespace DQS_Test_Package_Error_ver_1._0
             }
             if(e.KeyCode == Keys.W)
             {
+                
                 vRefresh();
-            }    
+            } 
+            
+            
         }
 
 
@@ -354,17 +355,22 @@ namespace DQS_Test_Package_Error_ver_1._0
 
         private void Infor(object sender, EventArgs e)
         {
-            //MessageBox.Show(" Design by Dien Quang IOT \n") ;
-            MessageBox.Show(" Điều kiện test trên 1 đường thẳng và <= 10m \n");
+            MessageBox.Show("Đang cập nhật");
         }
 
         private void bRefresh_Click(object sender, EventArgs e)
         {
+            //vResetAllPort();
             vRefresh();
            
         }
 
-        
+        private void home_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Phiên bản: 1.0.0 - Design by Dien Quang IOT", "Thông tin", MessageBoxButtons.OK);
+        }
+
+       
 
         private void vRefresh()
         {
@@ -374,6 +380,8 @@ namespace DQS_Test_Package_Error_ver_1._0
             tbStatus.Text = "N/A";
             tbStatus.BackColor = Color.White;
             //_serialPort.Close();
+            bStart.Text = "BẮT ĐẦU  (Q)";
+            bStart.Enabled = true;
             vGetPortName();
         }
         

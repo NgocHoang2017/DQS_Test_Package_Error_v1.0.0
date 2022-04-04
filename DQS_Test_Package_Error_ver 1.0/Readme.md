@@ -13,4 +13,4 @@ Important: Factors like weather temperature and humidity might cause variation o
 					
 3. Test condition
 
-h = 1.5 m compare the Group
+h = 1.5 m compare the ground

@@ -6,7 +6,6 @@
 | Zigbee Product          | Zigbee Product under test (Referred to as product hereinafter)|
 | Power                   | DC 5V output                                                  |
 | Laptop computer         | A packet capture software is required                         |
-|_________________________|_______________________________________________________________|
 
 2. Test principle
 
@@ -16,14 +15,4 @@ Important: Factors like weather temperature and humidity might cause variation o
 					
 3. Test condition
 
-
-
-                                      Actual communication range
-             Zigbee Product       ---------------------------------         Zigbee GateWay
-
-                   |                                                              |
-                   |                                                              |
-                   |    1.5m                                                      |   1.5m
-                   |                                                              |
-___________________|______________________________________________________________|_______________________________________
-                                              THE GROUND
+h = 1.5 m compare the Group

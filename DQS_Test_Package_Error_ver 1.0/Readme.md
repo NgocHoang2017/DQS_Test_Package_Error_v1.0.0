@@ -1,9 +1,29 @@
-# Package Error Rate Test V1.0
-- Test d?u vào c?a Zigbee bao g?m t? l? % l?i và LQI
-- Ði?u ki?n PASS (v1.0): % l?i < 1 và LQI > 70
+#COMMUNICATION RANGE OF ZIGBEE PRODUCT
+
+1. Test preparation
+
+|     Device              |              Decription                                       |
+| Zigbee Product          | Zigbee Product under test (Referred to as product hereinafter)|
+| Power                   | DC 5V output                                                  |
+| Laptop computer         | A packet capture software is required                         |
+|_________________________|_______________________________________________________________|
+
+2. Test principle
+
+Assess the maximum communication range by the success rate of data reporting
+
+Important: Factors like weather temperature and humidity might cause variation of the medium between the product which might affect the test result					
+					
+3. Test condition
 
 
-# Cách s? d?ng tool Pakage Error Rate Test
-- K?t n?i c?ng COM USB (s? d?ng file UsbFirmwareTestPer.bin) và Switch c?n test (SwitchFirmwareTestPer.bin)
-- Nh?n B?t d?u d? th?c hi?n Test
-- K?t qu? s? hi?n th? trong textbook k?t qu? (thông thu?ng th?i gian ?n d?nh n?m trong kho?ng 1 ~ 3 min) 
+
+                                      Actual communication range
+             Zigbee Product       ---------------------------------         Zigbee GateWay
+
+                   |                                                              |
+                   |                                                              |
+                   |    1.5m                                                      |   1.5m
+                   |                                                              |
+___________________|______________________________________________________________|_______________________________________
+                                              THE GROUND

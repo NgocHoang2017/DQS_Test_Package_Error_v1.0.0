@@ -3,8 +3,8 @@
 1. Test preparation
 
 
-Zigbee Product : Zigbee Product under test (Referred to as product hereinafter)
-Power          : DC 5V output                                                  
+Zigbee Product : Zigbee Product under test (Referred to as product hereinafter) \n
+Power          : DC 5V output                                                   \n
 Laptop computer: A packet capture software is required                         
 
 2. Test principle

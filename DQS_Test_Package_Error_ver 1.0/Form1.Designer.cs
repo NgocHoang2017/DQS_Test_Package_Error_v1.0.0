@@ -51,12 +51,12 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.thongtin = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbMinutes = new System.Windows.Forms.ComboBox();
+            this.tbSetLQI = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.bSetting = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbSetLQI = new System.Windows.Forms.ComboBox();
-            this.tbMinutes = new System.Windows.Forms.ComboBox();
             this.grInfor.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,9 +64,10 @@ namespace DQS_Test_Package_Error_ver_1._0
             // 
             // cbPortName
             // 
-            this.cbPortName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbPortName.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cbPortName.Enabled = false;
             this.cbPortName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPortName.ForeColor = System.Drawing.SystemColors.Desktop;
             this.cbPortName.FormattingEnabled = true;
             this.cbPortName.Location = new System.Drawing.Point(45, 33);
             this.cbPortName.Name = "cbPortName";
@@ -84,9 +85,9 @@ namespace DQS_Test_Package_Error_ver_1._0
             // 
             // bStart
             // 
-            this.bStart.BackColor = System.Drawing.Color.Silver;
+            this.bStart.BackColor = System.Drawing.Color.Teal;
             this.bStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bStart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bStart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bStart.Location = new System.Drawing.Point(346, 33);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(241, 46);
@@ -118,10 +119,10 @@ namespace DQS_Test_Package_Error_ver_1._0
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(185, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 39);
+            this.label2.Size = new System.Drawing.Size(176, 39);
             this.label2.TabIndex = 12;
             this.label2.Text = "Thời gian :";
             // 
@@ -177,10 +178,10 @@ namespace DQS_Test_Package_Error_ver_1._0
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(270, 50);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(291, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(186, 20);
+            this.label6.Size = new System.Drawing.Size(165, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Chất lượng sóng (LQI)";
             // 
@@ -199,10 +200,10 @@ namespace DQS_Test_Package_Error_ver_1._0
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 20);
+            this.label5.Size = new System.Drawing.Size(134, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "% Đáp ứng gói tin";
             // 
@@ -212,18 +213,18 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.tbError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbError.Enabled = false;
             this.tbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbError.Location = new System.Drawing.Point(167, 47);
+            this.tbError.Location = new System.Drawing.Point(167, 48);
             this.tbError.Name = "tbError";
             this.tbError.ReadOnly = true;
-            this.tbError.Size = new System.Drawing.Size(97, 26);
+            this.tbError.Size = new System.Drawing.Size(100, 26);
             this.tbError.TabIndex = 4;
             this.tbError.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bRefresh
             // 
-            this.bRefresh.BackColor = System.Drawing.Color.Silver;
+            this.bRefresh.BackColor = System.Drawing.Color.Teal;
             this.bRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bRefresh.Location = new System.Drawing.Point(593, 33);
             this.bRefresh.Name = "bRefresh";
             this.bRefresh.Size = new System.Drawing.Size(190, 46);
@@ -278,6 +279,36 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thiết lập thông số";
             // 
+            // tbMinutes
+            // 
+            this.tbMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tbMinutes.FormattingEnabled = true;
+            this.tbMinutes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.tbMinutes.Location = new System.Drawing.Point(10, 135);
+            this.tbMinutes.Name = "tbMinutes";
+            this.tbMinutes.Size = new System.Drawing.Size(120, 28);
+            this.tbMinutes.TabIndex = 13;
+            this.tbMinutes.SelectedIndexChanged += new System.EventHandler(this.tbMinutes_SelectedIndexChanged);
+            // 
+            // tbSetLQI
+            // 
+            this.tbSetLQI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tbSetLQI.FormattingEnabled = true;
+            this.tbSetLQI.Items.AddRange(new object[] {
+            "50",
+            "60",
+            "70"});
+            this.tbSetLQI.Location = new System.Drawing.Point(10, 60);
+            this.tbSetLQI.Name = "tbSetLQI";
+            this.tbSetLQI.Size = new System.Drawing.Size(167, 28);
+            this.tbSetLQI.TabIndex = 9;
+            this.tbSetLQI.SelectedIndexChanged += new System.EventHandler(this.tbSetLQI_SelectedIndexChanged);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -289,12 +320,14 @@ namespace DQS_Test_Package_Error_ver_1._0
             // 
             // bSetting
             // 
+            this.bSetting.BackColor = System.Drawing.SystemColors.Control;
+            this.bSetting.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bSetting.Location = new System.Drawing.Point(54, 192);
             this.bSetting.Name = "bSetting";
             this.bSetting.Size = new System.Drawing.Size(96, 30);
             this.bSetting.TabIndex = 10;
             this.bSetting.Text = "Lưu";
-            this.bSetting.UseVisualStyleBackColor = true;
+            this.bSetting.UseVisualStyleBackColor = false;
             this.bSetting.Click += new System.EventHandler(this.bSetting_Click);
             // 
             // label4
@@ -317,32 +350,6 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.label3.TabIndex = 8;
             this.label3.Text = "Cài đặt thông số LQI";
             // 
-            // tbSetLQI
-            // 
-            this.tbSetLQI.FormattingEnabled = true;
-            this.tbSetLQI.Items.AddRange(new object[] {
-            "50",
-            "60",
-            "70"});
-            this.tbSetLQI.Location = new System.Drawing.Point(10, 60);
-            this.tbSetLQI.Name = "tbSetLQI";
-            this.tbSetLQI.Size = new System.Drawing.Size(167, 28);
-            this.tbSetLQI.TabIndex = 9;
-            // 
-            // tbMinutes
-            // 
-            this.tbMinutes.FormattingEnabled = true;
-            this.tbMinutes.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.tbMinutes.Location = new System.Drawing.Point(10, 135);
-            this.tbMinutes.Name = "tbMinutes";
-            this.tbMinutes.Size = new System.Drawing.Size(120, 28);
-            this.tbMinutes.TabIndex = 13;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,7 +369,7 @@ namespace DQS_Test_Package_Error_ver_1._0
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Kiểm tra chất lượng sóng Zigbee v1.0.0";
+            this.Text = "Kiểm tra chất lượng sóng Zigbee v1.0.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grInfor.ResumeLayout(false);
             this.grInfor.PerformLayout();
